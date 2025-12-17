@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 public enum BatmanState
@@ -9,16 +10,40 @@ public enum BatmanState
 
 public class BatmanController : MonoBehaviour
 {
+    private GameObject _redLight;
+    private GameObject _blueLight;
+    private AudioSource _alarmAudioSource;
+    [SerializeField]
+    private AudioClip _alarmSound;
+
     [SerializeField]
     private float _moveSpeed = 6.0f;
     [SerializeField]
     private float _rotateSpeed = 18.0f;
 
     [SerializeField]
-    BatmanState _currentState;
+    private BatmanState _currentState;
+
+    private Coroutine _blinkCoroutine;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        _redLight = transform.Find("RedLight").gameObject;
+        if (_redLight == null)
+        {
+            Debug.LogError("RedLight not found");
+        }
+        _blueLight = transform.Find("BlueLight").gameObject;
+        if (_blueLight == null)
+        {
+            Debug.LogError("BlueLight not found");
+        }
+        _alarmAudioSource = transform.GetComponent<AudioSource>();
+        if (_alarmAudioSource == null)
+        {
+            Debug.LogError("AudioSource not found");
+        }
+        _alarmAudioSource.clip = _alarmSound;
         _currentState = BatmanState.Normal;
     }
 
@@ -27,6 +52,7 @@ public class BatmanController : MonoBehaviour
     {
         HandleMovement();
         HandleState();
+        HandleLightsandAlarm();
     }
 
     void HandleState()
@@ -78,6 +104,53 @@ public class BatmanController : MonoBehaviour
                 return _moveSpeed;
             else
                 return _rotateSpeed;
+        }
+    }
+
+    void HandleLightsandAlarm()
+    {
+        switch (_currentState)
+        {
+            case BatmanState.Normal:
+                StopAlarm();
+                break;
+            case BatmanState.Alert:
+                StartAlarm();
+                break;
+            case BatmanState.Stealth:
+                StopAlarm();
+                break;
+        }
+    }
+
+    void StartAlarm()
+    {
+        if (_blinkCoroutine == null)
+        {
+            _blinkCoroutine = StartCoroutine(BlinkLights());
+            _alarmAudioSource.Play();
+        }
+    }
+
+    void StopAlarm()
+    {
+        if (_blinkCoroutine != null)
+        {
+            StopCoroutine(_blinkCoroutine);
+            _blinkCoroutine = null;
+        }
+        _redLight.SetActive(false);
+        _blueLight.SetActive(false);
+        _alarmAudioSource.Stop();
+    }
+
+    IEnumerator BlinkLights()
+    {
+        while (true)
+        {
+            _redLight.SetActive(!_redLight.activeSelf);
+            _blueLight.SetActive(!_blueLight.activeSelf);
+            yield return new WaitForSeconds(0.5f);
         }
     }
 }
