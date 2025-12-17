@@ -1,0 +1,11 @@
+Model Information:
+* title:	Gotham by Night
+* source:	https://sketchfab.com/3d-models/gotham-by-night-be102daeda5d47ec8920b2ad42670aff
+* author:	athmos001 (https://sketchfab.com/athmos001)
+
+Model License:
+* license type:	CC-BY-NC-4.0 (http://creativecommons.org/licenses/by-nc/4.0/)
+* requirements:	Author must be credited. No commercial use.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Gotham by Night" (https://sketchfab.com/3d-models/gotham-by-night-be102daeda5d47ec8920b2ad42670aff) by athmos001 (https://sketchfab.com/athmos001) licensed under CC-BY-NC-4.0 (http://creativecommons.org/licenses/by-nc/4.0/)

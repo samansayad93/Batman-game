@@ -76,10 +76,10 @@ public class BatmanController : MonoBehaviour
         float rotateHorizontal = Input.GetAxis("Horizontal");
         float moveVertical = Input.GetAxis("Vertical");
 
-        Vector3 vmovement = Vector3.forward * moveVertical * CalculateSpeed(1) * Time.deltaTime;
+        Vector3 vmovement = Vector3.up * moveVertical * CalculateSpeed(1) * Time.deltaTime;
         float hmovement = rotateHorizontal * CalculateSpeed(0) * Time.deltaTime;
         transform.Translate(vmovement);
-        transform.Rotate(0, hmovement, 0);
+        transform.Rotate(0, 0, hmovement);
     }
 
     float CalculateSpeed(int direction)
@@ -127,6 +127,7 @@ public class BatmanController : MonoBehaviour
     {
         if (_blinkCoroutine == null)
         {
+            _redLight.SetActive(true);
             _blinkCoroutine = StartCoroutine(BlinkLights());
             _alarmAudioSource.Play();
         }
