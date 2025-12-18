@@ -16,6 +16,8 @@ public class BatmanController : MonoBehaviour
     [SerializeField]
     private AudioClip _alarmSound;
 
+    private GameManager _gameManager;
+
     [SerializeField]
     private float _moveSpeed = 6.0f;
     [SerializeField]
@@ -43,6 +45,11 @@ public class BatmanController : MonoBehaviour
         {
             Debug.LogError("AudioSource not found");
         }
+        _gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
+        if (_gameManager == null)
+        {
+            Debug.LogError("GameManager not found");
+        }
         _alarmAudioSource.clip = _alarmSound;
         _currentState = BatmanState.Normal;
     }
@@ -52,7 +59,6 @@ public class BatmanController : MonoBehaviour
     {
         HandleMovement();
         HandleState();
-        HandleLightsandAlarm();
     }
 
     void HandleState()
@@ -69,6 +75,7 @@ public class BatmanController : MonoBehaviour
         {
             _currentState = BatmanState.Alert;
         }
+        HandleLightsandAlarm();
     }
 
     void HandleMovement()
@@ -112,12 +119,15 @@ public class BatmanController : MonoBehaviour
         switch (_currentState)
         {
             case BatmanState.Normal:
+                _gameManager.LightHigh();
                 StopAlarm();
                 break;
             case BatmanState.Alert:
+            _gameManager.LightHigh();
                 StartAlarm();
                 break;
             case BatmanState.Stealth:
+                _gameManager.LightLow();
                 StopAlarm();
                 break;
         }
