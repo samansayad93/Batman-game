@@ -1,16 +1,15 @@
 using UnityEngine;
 
+/// <summary>
+/// Controls the rotation behavior of the Bat-Signal object
+/// </summary>
 public class BatSignalController : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
+    /// <summary>
+    /// Called once per frame to rotate the Bat-Signal continuously
+    /// </summary>
     void Update()
     {
-        transform.Rotate(0,0,0.05f);
+        transform.Rotate(0, 0, 0.05f);
     }
 }

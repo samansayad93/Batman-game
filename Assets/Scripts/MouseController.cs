@@ -1,28 +1,50 @@
 using UnityEngine;
 
+/// <summary>
+/// Handles mouse input to rotate an object with sensitivity and angle limits
+/// </summary>
 public class MouseController : MonoBehaviour
 {
+    /// <summary>
+    /// Mouse movement sensitivity
+    /// </summary>
+    [SerializeField]
     private float sensitivity = 250f;
+
+    /// <summary>
+    /// Minimum and maximum rotation limits on the X axis (vertical)
+    /// </summary>
     private float minX = -30f;
     private float maxX = 30f;
+
+    /// <summary>
+    /// Minimum and maximum rotation limits on the Y axis (horizontal)
+    /// </summary>
     private float minY = -30f;
     private float maxY = 30f;
 
+    /// <summary>
+    /// Current rotation values
+    /// </summary>
     float xRotation = 0f;
     float yRotation = 0f;
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    /// <summary>
+    /// Locks and hides the cursor, and initializes rotation values
+    /// </summary>
     void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
-        Vector3 rot = transform.localRotation.eulerAngles;
 
+        Vector3 rot = transform.localRotation.eulerAngles;
         yRotation = rot.y;
         xRotation = rot.x;
     }
 
-    // Update is called once per frame
+    /// <summary>
+    /// Reads mouse input, applies rotation with sensitivity and clamps angles
+    /// </summary>
     void Update()
     {
         float mouseX = Input.GetAxis("Mouse X") * sensitivity * Time.deltaTime;
