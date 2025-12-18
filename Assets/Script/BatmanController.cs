@@ -13,6 +13,7 @@ public class BatmanController : MonoBehaviour
     private GameObject _redLight;
     private GameObject _blueLight;
     private AudioSource _alarmAudioSource;
+    private GameObject _batSignal;
     [SerializeField]
     private AudioClip _alarmSound;
 
@@ -45,6 +46,11 @@ public class BatmanController : MonoBehaviour
         {
             Debug.LogError("AudioSource not found");
         }
+        _batSignal = transform.Find("BatSignal").gameObject;
+        if (_batSignal == null)
+        {
+            Debug.LogError("BatSignal not found");
+        }
         _gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
         if (_gameManager == null)
         {
@@ -52,6 +58,9 @@ public class BatmanController : MonoBehaviour
         }
         _alarmAudioSource.clip = _alarmSound;
         _currentState = BatmanState.Normal;
+        _redLight.SetActive(false);
+        _blueLight.SetActive(false);
+        _batSignal.SetActive(false);
     }
 
     // Update is called once per frame
@@ -66,16 +75,22 @@ public class BatmanController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.N))
         {
             _currentState = BatmanState.Normal;
+            HandleLightsandAlarm();
         }
         else if (Input.GetKeyDown(KeyCode.C))
         {
             _currentState = BatmanState.Stealth;
+            HandleLightsandAlarm();
         }
         else if (Input.GetKeyDown(KeyCode.Space))
         {
             _currentState = BatmanState.Alert;
+            HandleLightsandAlarm();
         }
-        HandleLightsandAlarm();
+        else if (Input.GetKeyDown(KeyCode.B))
+        {
+            _batSignal.SetActive(!_batSignal.activeSelf);
+        }
     }
 
     void HandleMovement()

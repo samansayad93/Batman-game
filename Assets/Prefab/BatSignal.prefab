@@ -187,8 +187,28 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 8897093224900880590, guid: 19e588272c47f44df94ba5909ad41fd6, type: 3}
       insertIndex: -1
       addedObject: {fileID: 8317224251202932065}
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 8128668236925612103, guid: 19e588272c47f44df94ba5909ad41fd6, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7813277854868606548}
   m_SourcePrefab: {fileID: -5645937942226959685, guid: 19e588272c47f44df94ba5909ad41fd6, type: 3}
+--- !u!1 &3698355960750728397 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8128668236925612103, guid: 19e588272c47f44df94ba5909ad41fd6, type: 3}
+  m_PrefabInstance: {fileID: 4872305009415246986}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &7813277854868606548
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3698355960750728397}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 136f75a9f04e54739b9f4c73b00ecd49, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BatSignalController
 --- !u!4 &4099740972086017092 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8897093224900880590, guid: 19e588272c47f44df94ba5909ad41fd6, type: 3}

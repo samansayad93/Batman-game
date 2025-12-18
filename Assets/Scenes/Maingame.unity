@@ -679,10 +679,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: BatMobile
       objectReference: {fileID: 0}
-    - target: {fileID: 7462839642729197077, guid: 3fcbca3ff792e4656af66b06bacda32b, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
