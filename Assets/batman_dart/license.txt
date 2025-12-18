@@ -1,0 +1,11 @@
+Model Information:
+* title:	Batman Dart
+* source:	https://sketchfab.com/3d-models/batman-dart-ef2a7dbbcbfd43e28c8746b7ce967016
+* author:	Vijay Saini (https://sketchfab.com/VijaySaini)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Batman Dart" (https://sketchfab.com/3d-models/batman-dart-ef2a7dbbcbfd43e28c8746b7ce967016) by Vijay Saini (https://sketchfab.com/VijaySaini) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
