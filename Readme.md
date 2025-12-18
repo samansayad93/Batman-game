@@ -6,6 +6,7 @@
 - [Features](#features)  
 - [Controls](#controls)  
 - [Scripts Overview](#scripts-overview)  
+- [Download & Video](#download--video)  
 
 ---
 
@@ -79,3 +80,11 @@ This is a 3D Batman-inspired Unity game where the player can control Batman, swi
 - Handles smooth camera/character rotation with mouse input.  
 - Clamps rotation to prevent over-rotation.  
 - Hides and locks cursor during gameplay.  
+
+---
+
+## Download & Video
+All project files have been uploaded to Google Drive and can be accessed here:  
+[Google Drive Link](https://drive.google.com/drive/folders/1JzPx3c_A1I2hXU4JtXLb0vYYJQTsDfiq?usp=sharing)
+
+You can also view the gameplay video in the file `gameplay.mkv` included in the Google Drive folder.
