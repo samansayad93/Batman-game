@@ -24,7 +24,6 @@ public class BatmanController : MonoBehaviour
     [SerializeField]
     private float _rotateSpeed = 18.0f;
 
-    [SerializeField]
     private BatmanState _currentState;
 
     private Coroutine _blinkCoroutine;

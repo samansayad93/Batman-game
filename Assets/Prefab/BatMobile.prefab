@@ -928,7 +928,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f8fd3c825e9a43768b9176fb0f09e67, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BatmanController
-  _alarmSound: {fileID: 0}
+  _alarmSound: {fileID: 8300000, guid: c3512188b409e4e1aa023e905564f1d2, type: 3}
   _moveSpeed: 6
   _rotateSpeed: 18
   _currentState: 0
@@ -945,7 +945,7 @@ AudioSource:
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 0.5
+  m_Volume: 0.25
   m_Pitch: 1
   Loop: 1
   Mute: 0

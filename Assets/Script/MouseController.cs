@@ -2,8 +2,7 @@ using UnityEngine;
 
 public class MouseController : MonoBehaviour
 {
-    [SerializeField]
-    private float sensitivity = 200f;
+    private float sensitivity = 250f;
     private float minX = -30f;
     private float maxX = 30f;
     private float minY = -30f;
