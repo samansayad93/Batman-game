@@ -48,16 +48,16 @@
     <Analyzer Include="/Applications/Unity/Hub/Editor/6000.2.6f1/Unity.app/Contents/Tools/Unity.SourceGenerators/Unity.UIToolkit.SourceGenerator.dll" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets/Script/MouseController.cs" />
-    <Compile Include="Assets/Script/BatSignalController.cs" />
-    <Compile Include="Assets/Script/BatmanController.cs" />
+    <Compile Include="Assets/Scripts/MouseController.cs" />
+    <Compile Include="Assets/Scripts/BatmanController.cs" />
+    <Compile Include="Assets/Scripts/BatSignalController.cs" />
     <Compile Include="Assets/TutorialInfo/Scripts/Readme.cs" />
-    <Compile Include="Assets/Script/GameManager.cs" />
+    <Compile Include="Assets/Scripts/GameManager.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Assets/batmobile_armored/license.txt" />
-    <None Include="Assets/gotham_by_night/license.txt" />
-    <None Include="Assets/batman_dart/license.txt" />
+    <None Include="Assets/Objects/batmobile_armored/license.txt" />
+    <None Include="Assets/Objects/gotham_by_night/license.txt" />
+    <None Include="Assets/Objects/batman_dart/license.txt" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
